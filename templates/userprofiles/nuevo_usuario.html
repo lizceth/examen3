@@ -1,0 +1,8 @@
+{% block titulo %}Nuevo usuario{% endblock %}
+{% block contenido %}
+<h2>Registro de Usuarios</h2>
+	<form id='formulario' method='post' action=''>{% csrf_token %}
+		<table>{{formulario}}</table>
+		<p><input type='submit' class='btn btn-primary' value='crear'/></p>
+	</form>
+{% endblock %}

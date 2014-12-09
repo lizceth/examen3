@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<ul>
+    <p>usuarios registrados</p>
+{% for usuario in usuarios %}
+<li>{{usuario.documento}}</li>
+{% endfor %}
+
+</ul>
+{% if perms.userprofiles.update %}<a href="{% url 'update' userprofile.pk
+    %}">Update</a>{% endif %} | {% if perms.userprofiles.delete %}<a href="{%
+    url 'delete' userprofile.pk %}">Delete</a>{% endif %}
+{% endblock %}

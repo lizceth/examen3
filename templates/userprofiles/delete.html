@@ -1,0 +1,10 @@
+{% load url from future %}
+
+{% block title %}{{object_name}} delete?{% endblock %}
+
+{% block content %}
+<h3>seguro que quiere eliminar? {{object}}?</h3>
+<form action="" method="post">{% csrf_token %}
+<input type="submit" value="si"/>  <input type="button" value="No..." onclick="window.history.go(-1);"/>
+</form>
+{% endblock %} 

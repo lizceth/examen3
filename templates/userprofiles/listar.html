@@ -1,0 +1,10 @@
+
+
+{% block contenido %}
+<ul>
+    <p>usuarios registrados</p>
+{% for usuario in profiles %}
+    <li>{{usuario.username}}</li>
+{% endfor %}
+{% endblock %}
+</ul>

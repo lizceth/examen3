@@ -1,0 +1,23 @@
+{% block content %}
+        <td>{{user.username}}</td>
+        <br>
+        <td>telefono:{{profile.telefono}}</td> 
+        <br>
+        <td> tipo de documento:{{profile.documento}}</td>
+        <br>
+        <td>numero de documento:{{profile.numero_doc}}</td>
+        <br>
+        <td>departamento:{{profile.departamento}}</td>
+        <br>
+        <td>provincia:{{profile.provincia}}</td>
+        <br>
+        <td>distrito:{{profile.distrito}}</td>
+        <br>
+        <td>zona horaria:{{profile.zona_horaria}}</td>
+        
+{% if perms.userprofiles.update %}<a href="{% url 'update' profile.pk
+    %}">Update</a>{% endif %} | {% if perms.userprofiles.delete %}<a href="{%
+    url 'delete' profile.pk %}">Delete</a>{% endif %}
+{% endblock %} 
+
+

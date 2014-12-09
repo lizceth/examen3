@@ -1,0 +1,26 @@
+{% block content %}
+<table>
+<thead><tr><th>Title</th><th>Action</th></tr></thead>
+<tbody>
+    {% for perfil in profile %}
+    <tr>
+        <td>
+            {% if perms.perfil.view_perfil %}
+            <a href="{{userprofiles.get_absolute_url}}">{{perfil}}</a>
+            {% else %}
+            {{perfil}} 
+            {% endif %}
+        </td>
+        <td>
+            {% if perms.userprofiles.update_perfil %}
+            <a href="{% url 'update' perfil.pk %}">Update</a>
+            {% endif %} | {% if perms.userprofiles.delete %}
+            <a href="{% url 'delete' perfil.pk %}">Delete</a>
+            {% endif %}
+    </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %} 
+
